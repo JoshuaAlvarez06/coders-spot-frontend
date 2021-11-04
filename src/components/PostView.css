@@ -1,0 +1,39 @@
+.postSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.postContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.postClicked {
+  background: #eee;
+  width: 75%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.postTitle {
+  border-bottom: 2px solid #000;
+  width: 100%;
+}
+
+.postTitle {
+  padding: 1rem 3rem;
+}
+
+.postContent {
+  padding: 5rem 3rem;
+}

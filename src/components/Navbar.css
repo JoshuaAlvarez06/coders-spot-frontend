@@ -1,0 +1,80 @@
+.navbarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 2rem;
+  background: #000;
+  height: 140px;
+  color: #fff;
+  z-index: 999;
+  position: relative;
+  box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.267);
+}
+
+.logo {
+  font-size: 2.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.menuItems {
+  display: flex;
+  list-style: none;
+}
+
+.menuItem {
+  text-decoration: none;
+  margin-right: 5rem;
+}
+
+.menuItem:last-child {
+  margin-right: 0;
+}
+
+.menuItem a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bars {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+  position: fixed;
+  top: 2.5rem;
+  right: 2rem;
+}
+
+.menuItems button {
+  font-size: 1rem;
+  padding: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbarContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  .menuItems {
+    display: none;
+  }
+
+  .bars {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    margin-bottom: 3rem;
+  }
+}

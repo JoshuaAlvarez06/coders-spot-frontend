@@ -1,0 +1,64 @@
+.profileContainer {
+  width: 100%;
+}
+
+.profileSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfoSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.topInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.topInfo h2 {
+  margin-bottom: 1rem;
+}
+
+.userInfoSection img {
+  margin: 0 auto;
+  width: 9rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info {
+  margin-top: 1rem;
+}
+
+.info p:first-child {
+  margin-right: 1rem;
+}
+
+.editBtn {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1em 1em;
+}
+
+.editBtn:hover {
+  transform: scale(1.1);
+}

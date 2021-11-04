@@ -1,0 +1,77 @@
+.postCreateContainer {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.postCreateForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCreateForm button {
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0.5em 1.5em;
+  background: none;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 85px;
+}
+
+.postCreateForm button:hover {
+  transform: scale(1.1);
+}
+
+.postCreateForm h2 {
+  text-align: center;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 50%;
+  max-width: 420px;
+}
+
+.formGroup input {
+  padding: 0.25em;
+  border: 1px solid #000;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.formGroup select {
+  margin-bottom: 1rem;
+}
+
+.mustBeLoggedIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mustBeLoggedIn button {
+  margin-top: 2rem;
+  font-size: 1rem;
+  background: #000 !important;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.mustBeLoggedIn button:hover {
+  transform: scale(1.1);
+}
