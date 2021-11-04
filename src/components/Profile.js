@@ -1,23 +1,23 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import mainUrl from "../helpers/reqHelper";
 import "./Profile.css";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const [userId, setUserId] = React.useState(0);
   const [posts, setPosts] = React.useState([]);
+  const { REACT_APP_API_BASE_URL = "http://localhost:5001" } = process.env;
 
   React.useEffect(() => {
     if (user) {
       axios
-        .get(`${mainUrl}/users/${user.email}`)
+        .get(`${REACT_APP_API_BASE_URL}/users/${user.email}`)
         .then((response) => setUserId(response.data.data.id))
         .then(() => {
           if (userId >= 1) {
             axios
-              .get(`${mainUrl}/users/${userId}/posts`)
+              .get(`${REACT_APP_API_BASE_URL}/users/${userId}/posts`)
               .then((response) => setPosts(response.data.data));
           }
         });

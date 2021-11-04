@@ -5,13 +5,13 @@ import "./Posts.css";
 
 const Posts = () => {
   const [posts, setPosts] = React.useState([]);
+  const { REACT_APP_API_BASE_URL } = process.env;
+
   React.useEffect(() => {
-    const { REACT_APP_API_BASE_URL = "http://localhost:5001" } = process.env;
     axios
       .get(`${REACT_APP_API_BASE_URL}/posts`)
-      .then((res) => setPosts(res.data.data))
-      .catch(console.log);
-  }, []);
+      .then((res) => setPosts(res.data.data));
+  }, [REACT_APP_API_BASE_URL]);
   return (
     <div className="postsSection">
       <div className="postsContainer">

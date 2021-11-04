@@ -1,13 +1,12 @@
 import React from "react";
 import "./PostCreate.css";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./LoginButton";
 
 const PostCreate = () => {
-  const history = useHistory();
+  const { REACT_APP_API_BASE_URL } = process.env;
   const { user, isAuthenticated } = useAuth0();
   const [userId, setUserId] = React.useState(0);
   const [postFormData, setPostFormData] = React.useState({
@@ -16,12 +15,11 @@ const PostCreate = () => {
   });
   React.useEffect(() => {
     if (user && isAuthenticated) {
-      const { REACT_APP_API_BASE_URL = "http://localhost:5001" } = process.env;
       axios
         .get(`${REACT_APP_API_BASE_URL}/users/${user.email}`)
         .then((response) => setUserId(response.data.data.id));
     }
-  }, [user, isAuthenticated, userId]);
+  }, [user, isAuthenticated, userId, REACT_APP_API_BASE_URL]);
 
   const changeHandler = ({ target }) => {
     const value = target.type === "checkbox" ? target.checked : target.value;
@@ -33,7 +31,6 @@ const PostCreate = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const { REACT_APP_API_BASE_URL = "http://localhost:5001" } = process.env;
     axios.post(`${REACT_APP_API_BASE_URL}/posts`, {
       data: {
         ...postFormData,
@@ -44,7 +41,6 @@ const PostCreate = () => {
       post_title: "",
       post_content: "",
     });
-    history.push("/posts");
   };
 
   return (
