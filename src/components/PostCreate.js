@@ -45,7 +45,6 @@ const PostCreate = () => {
       post_content: "",
     });
     history.push("/posts");
-    history.go(0);
   };
 
   return (
