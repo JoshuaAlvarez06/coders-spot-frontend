@@ -72,7 +72,7 @@ body {
 
 .area {
   background: #000000;
-  background: -webkit-linear-gradient(to left, #757575, #141414);
+  background: -webkit-linear-gradient(to left, #000000, #141414);
   width: 100%;
   height: calc(100vh - 140px);
 }
