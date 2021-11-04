@@ -22,7 +22,7 @@ const Profile = () => {
           }
         });
     }
-  }, [user, userId]);
+  }, [user, userId, REACT_APP_API_BASE_URL]);
 
   return (
     isAuthenticated && (
