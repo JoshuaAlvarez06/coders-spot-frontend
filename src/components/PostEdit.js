@@ -71,7 +71,9 @@ const PostEdit = () => {
       <form className='postCreateForm' onSubmit={submitHandler}>
         <h2>Edit Post</h2>
         <div className='formGroup'>
-          {error && <p className='errorMsg'>{error.message}</p>}
+          {error && error.message !== 'Request failed with status code 500' && (
+            <p className='errorMsg'>{error.message}</p>
+          )}
           <label htmlFor='title'>Title</label>
           <input
             type='text'
