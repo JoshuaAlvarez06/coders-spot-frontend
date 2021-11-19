@@ -76,36 +76,40 @@ const Profile = () => {
           {isAuthenticated && (
             <div className='userPosts'>
               <h2>Your Posts</h2>
-              {posts.map((post, index) => (
-                <div
-                  className='userPostsSection'
-                  key={post.post_id}
-                  id={post.post_id}
-                >
-                  <Link to={`/posts/${post.post_id}`} className='postLink'>
-                    <div className='post'>
-                      <div className='postName'>
-                        <h3>{post.post_title}</h3>
+              {posts.length ? (
+                posts.map((post, index) => (
+                  <div
+                    className='userPostsSection'
+                    key={post.post_id}
+                    id={post.post_id}
+                  >
+                    <Link to={`/posts/${post.post_id}`} className='postLink'>
+                      <div className='post'>
+                        <div className='postName'>
+                          <h3>{post.post_title}</h3>
+                        </div>
+                        <div className='postBodySample'>
+                          <p>{post.post_content.slice(0, 200)}...</p>
+                        </div>
                       </div>
-                      <div className='postBodySample'>
-                        <p>{post.post_content.slice(0, 200)}...</p>
-                      </div>
+                    </Link>
+                    <div className='postsBtnGroup'>
+                      <button
+                        onClick={() =>
+                          history.push(`/posts/${post.post_id}/edit`)
+                        }
+                      >
+                        Edit
+                      </button>
+                      <button onClick={() => handleDelete(post.post_id)}>
+                        Delete
+                      </button>
                     </div>
-                  </Link>
-                  <div className='postsBtnGroup'>
-                    <button
-                      onClick={() =>
-                        history.push(`/posts/${post.post_id}/edit`)
-                      }
-                    >
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(post.post_id)}>
-                      Delete
-                    </button>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p>You have no posts to show</p>
+              )}
             </div>
           )}
         </div>
