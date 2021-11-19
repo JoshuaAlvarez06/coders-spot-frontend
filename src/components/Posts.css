@@ -17,20 +17,31 @@
   text-align: center;
 }
 
-.createBtn {
+.createBtn,
+.postsBtn {
   text-decoration: none;
   color: inherit;
   background: #eeeeee;
   border: 1px solid #000000;
   border-radius: 5px;
-  margin: 0 auto;
   padding: 0.75rem 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.createBtn {
+  margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.createBtn:hover {
+.createBtn:hover,
+.postsBtn:hover {
   transform: scale(1.1);
+}
+
+.postsBtn {
+  margin-bottom: 2rem;
 }
 
 .post {
