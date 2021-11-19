@@ -62,3 +62,37 @@
 .editBtn:hover {
   transform: scale(1.1);
 }
+
+.userPosts {
+  margin-top: 3rem;
+}
+
+.userPosts > h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.userPostsSection {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.postsBtnGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.postsBtnGroup button {
+  text-decoration: none;
+  color: inherit;
+  background: #eeeeee;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 0.25rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}

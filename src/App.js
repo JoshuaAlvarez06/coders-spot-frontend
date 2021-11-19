@@ -1,17 +1,18 @@
-import "./App.css";
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import NavDropdown from "./components/NavDropdown";
-import GlobalStyle from "./globalStyles";
-import Home from "./components/Home";
-import Posts from "./components/Posts";
-import Profile from "./components/Profile";
-import { useAuth0 } from "@auth0/auth0-react";
-import LoadingPage from "./components/LoadingPage";
-import axios from "axios";
-import PostCreate from "./components/PostCreate";
-import PostView from "./components/PostView";
+import './App.css';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import NavDropdown from './components/NavDropdown';
+import GlobalStyle from './globalStyles';
+import Home from './components/Home';
+import Posts from './components/Posts';
+import Profile from './components/Profile';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoadingPage from './components/LoadingPage';
+import axios from 'axios';
+import PostCreate from './components/PostCreate';
+import PostView from './components/PostView';
+import PostEdit from './components/PostEdit';
 
 function App() {
   const [visibleNavMenu, setVisibleNavMenu] = React.useState(false);
@@ -21,7 +22,7 @@ function App() {
 
   React.useEffect(() => {
     if (user) {
-      const { REACT_APP_API_BASE_URL = "http://localhost:5001" } = process.env;
+      const { REACT_APP_API_BASE_URL = 'http://localhost:5001' } = process.env;
       axios.post(`${REACT_APP_API_BASE_URL}/users`, {
         data: {
           username: user.nickname,
@@ -40,19 +41,22 @@ function App() {
       <Navbar navClickHandler={navClickHandler} />
       {visibleNavMenu && <NavDropdown navClickHandler={navClickHandler} />}
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route exact path="/posts/create">
+        <Route exact path='/posts/:postId/edit'>
+          <PostEdit />
+        </Route>
+        <Route exact path='/posts/create'>
           <PostCreate />
         </Route>
-        <Route exact path="/posts/:postId">
+        <Route exact path='/posts/:postId'>
           <PostView />
         </Route>
-        <Route exact path="/posts">
+        <Route exact path='/posts'>
           <Posts />
         </Route>
-        <Route exact path="/profile">
+        <Route exact path='/profile'>
           <Profile />
         </Route>
       </Switch>
