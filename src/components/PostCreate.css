@@ -5,12 +5,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: calc(100vh - 140px);
 }
 
 .postCreateForm {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 .postCreateForm button {
@@ -42,8 +45,9 @@
   max-width: 420px;
 }
 
-.formGroup input {
-  padding: 0.25em;
+.formGroup input,
+.formGroup textarea {
+  padding: 0.5em;
   border: 1px solid #000;
 }
 
@@ -74,4 +78,7 @@
 
 .mustBeLoggedIn button:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
 }
