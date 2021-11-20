@@ -9,6 +9,7 @@ const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const [userId, setUserId] = React.useState(0);
   const [posts, setPosts] = React.useState([]);
+  const [error, setError] = React.useState(null);
   const { REACT_APP_API_BASE_URL = 'http://localhost:5001' } = process.env;
 
   const handleDelete = (postId) => {
@@ -20,10 +21,8 @@ const Profile = () => {
       try {
         axios.delete(`${REACT_APP_API_BASE_URL}/posts/${postId}`);
       } catch (error) {
-        console.log(error.message);
+        setError(error.message);
       }
-    } else {
-      console.log('no');
     }
   };
 
@@ -47,17 +46,22 @@ const Profile = () => {
       <div className='profileContainer'>
         <div className='profileSection'>
           <h1>Profile</h1>
+          {error && (
+            <h3 style={{ maxWidth: '500px' }} className='errorMsg'>
+              {error.message}
+            </h3>
+          )}
           <div className='userInfoSection'>
             <div className='topInfo'>
-              <h2>{user.name}</h2>
-              <img src={user.picture} alt={user.nickname} />
+              <h2>{user?.name}</h2>
+              <img src={user?.picture} alt={user?.nickname} />
             </div>
             <div className='info'>
               <p>Name:</p>
               <p>
                 {!user?.given_name || !user?.family_name
                   ? `Unknown`
-                  : `${user.given_name} ${user.family_name}`}
+                  : `${user?.given_name} ${user?.family_name}`}
               </p>
             </div>
             <div className='info'>
@@ -76,7 +80,7 @@ const Profile = () => {
           {isAuthenticated && (
             <div className='userPosts'>
               <h2>Your Posts</h2>
-              {posts.length ? (
+              {posts?.length ? (
                 posts.map((post, index) => (
                   <div
                     className='userPostsSection'

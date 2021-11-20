@@ -45,7 +45,6 @@ const PostEdit = () => {
       ...postFormData,
       [target.name]: value,
     });
-    console.log(postFormData);
   };
 
   const submitHandler = (event) => {
