@@ -4,6 +4,12 @@ Link to live app: https://codersspot.netlify.app/
 
 This project was created using React.js, JavaScript, HTML, CSS, Node.js, Express.js, PostgreSQL, and Knex.js.
 
+## Test Account Login
+
+- Email: test@test.com
+
+- Password: Test123!
+
 ## Functionality present in app
 
 1. Authentication
