@@ -7,3 +7,6 @@ textarea {
   padding: 0.25em;
   border: 1px solid #000;
 }
+p {
+  white-space: pre-line;
+}
