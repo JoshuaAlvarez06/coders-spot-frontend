@@ -52,6 +52,10 @@
   border: 1px solid #000;
 }
 
+.textarea {
+  resize: vertical;
+}
+
 .formGroup label {
   margin-bottom: 0.5rem;
   color: #000;
@@ -79,7 +83,4 @@
 
 .mustBeLoggedIn button:hover {
   transform: scale(1.1);
-}
-
-@media screen and (max-width: 768px) {
 }
