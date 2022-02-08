@@ -70,6 +70,12 @@
   padding: 1rem 3rem;
 }
 
+.postBodySample p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
+}
+
 .postLink {
   text-decoration: none;
   color: inherit;
