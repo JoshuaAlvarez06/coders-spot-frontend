@@ -81,3 +81,8 @@
   margin-bottom: 2rem;
   text-align: left;
 }
+
+.loading-text {
+  margin-bottom: 32px;
+  font-weight: bold;
+}

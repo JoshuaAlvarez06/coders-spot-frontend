@@ -25,7 +25,11 @@ const Posts = () => {
         <Link to='/posts/create' className='createBtn'>
           Create a Post
         </Link>
-        <p className='directions'>Click on post to read more</p>
+        {posts.length === 0 ? 
+          <p className="loading-text">Loading...</p> 
+          : 
+          <p className='directions'>Click on post to read more</p>
+        }
         {posts.map(
           (post, index) =>
             index < displayAmount && (
@@ -45,12 +49,12 @@ const Posts = () => {
               </Link>
             )
         )}
-        {displayAmount < posts.length && displayAmount !== posts.length && (
+        {posts.length !== 0 && displayAmount < posts.length && displayAmount !== posts.length && (
           <button className='postsBtn' onClick={increasePosts}>
             View More
           </button>
         )}
-        {displayAmount > posts.length && displayAmount !== posts.length && (
+        {posts.length !== 0 && displayAmount > posts.length && displayAmount !== posts.length && (
           <button className='postsBtn' onClick={decreasePosts}>
             View Less
           </button>
