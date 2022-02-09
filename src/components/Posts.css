@@ -73,7 +73,7 @@
 .postBodySample p {
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .postLink {
