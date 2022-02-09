@@ -5,6 +5,7 @@ import './Posts.css';
 
 const Posts = () => {
   const [posts, setPosts] = React.useState([]);
+  const [isFetching, setIsFetching] = React.useState(true);
   const [displayAmount, setDisplayAmount] = React.useState(4);
   const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -12,12 +13,15 @@ const Posts = () => {
   const decreasePosts = () => setDisplayAmount(4);
 
   React.useEffect(() => {
+    if (!isFetching) return;
     axios.get(`${REACT_APP_API_BASE_URL}/posts`).then((res) => {
       let data = res.data.data;
       data = data.sort((a, b) => b.post_id - a.post_id);
       setPosts(data);
     });
-  }, [REACT_APP_API_BASE_URL, posts]);
+    setIsFetching(false);
+  }, [REACT_APP_API_BASE_URL, posts, isFetching]);
+
   return (
     <div className='postsSection'>
       <div className='postsContainer'>
@@ -43,7 +47,7 @@ const Posts = () => {
                     <h3>{post.post_title}</h3>
                   </div>
                   <div className='postBodySample'>
-                    <p>{post.post_content.slice(0, 200)}...</p>
+                    <p>{post.post_content}</p>
                   </div>
                 </div>
               </Link>
