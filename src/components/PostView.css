@@ -119,6 +119,7 @@
   background: #d8d8d8;
   padding: 1rem;
   border-radius: 5px;
+  position: relative;
 }
 
 .commentHeader {
@@ -151,16 +152,29 @@
 }
 
 .deleteCommentBtn {
-  background: rgb(245, 160, 160);
-  color: #000;
+  position: absolute;
+  height: 30px;
+  right: 16px;
+  bottom: 16px;
+  background: #acacac;
   border: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
+  border-radius: 50%;
+  padding: 10px;
+  display: grid;
+  place-items: center;
   cursor: pointer;
 }
 
+.deleteCommentBtn i {
+  font-size: 0.75rem;
+}
+
 .deleteCommentBtn:hover {
+  background: #c8c8c8;
+}
+
+.deleteCommentBtn:hover,
+.deleteCommentBtn:hover i {
   transform: scale(1.05);
 }
 

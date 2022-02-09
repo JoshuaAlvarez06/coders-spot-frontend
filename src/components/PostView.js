@@ -146,7 +146,7 @@ const PostView = () => {
                             className='deleteCommentBtn'
                             onClick={() => deleteComment(com.comment_id)}
                           >
-                            Delete
+                            <i className="fas fa-trash"></i>
                           </button>
                         )}
                       </div>
